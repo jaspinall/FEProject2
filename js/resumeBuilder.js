@@ -13,7 +13,7 @@ var bio = {
     "location": "Oakland, CA"
     },
     "pictureURL": "images/cat.jpg",
-    "welcomeMessage": "Hi there",
+    "welcomeMessage": "A front-end developer with a range of experience in project management, project management, and the K-12 educational market.",
     "skills": ["product management", "project management", "coding"]
 };
 
@@ -97,30 +97,41 @@ var onlineClasses = {
   ]
 };
 
-function displayHeaderFooter() {
-  var formattedRole= HTMLheaderRole.replace("%data%", bio.role);
-  $("#header").prepend(formattedRole);
+function displayNavFooter() {
 
-  var formattedName= HTMLheaderName.replace("%data%", bio.name);
-  $("#header").prepend(formattedName);
+  var formattedTitle= HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
 
-  var formattedPicture= HTMLbioPic.replace("%data%", bio.pictureURL);
-  $("#header").append(formattedPicture);
+  $(".navbar-text").append(formattedTitle);
+
+  var formattedRole=   $(".navbar-text").append(formattedRole);
+
+};
+
+displayNavFooter();
+
+function displayHeader() {
 
   for (var contact in bio.contacts) {
     var formattedContact = HTMLcontactGeneric.replace("%contact%", contact).replace("%data%", bio.contacts[contact]);
-    $("#topContacts").append(formattedContact);
     $("#footerContacts").append(formattedContact);
   };
 
-  $("#header").append(HTMLskillsStart);
+
+  var formattedWelcome= HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+  $("#bio").append(formattedWelcome);
+
+  var formattedPicture= HTMLbioPic.replace("%data%", bio.pictureURL);
+  $("#bio").append(formattedPicture);
+
+  $("#bio").append(HTMLskillsStart);
   for (skill in bio.skills) {
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-    $("#header").append(formattedSkill);
-  }
+    $("#skills").append(formattedSkill);
+  };
 };
 
-displayHeaderFooter();
+displayHeader();
+
 
 
 function displayWork() {

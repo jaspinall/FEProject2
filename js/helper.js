@@ -12,22 +12,22 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr>';
+var HTMLheaderName = '<p><span class="title">%data%</span>';
+var HTMLheaderRole =  ' | <span class="role">%data%</span></p>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric = '<li class="contact"><span class="contact-title">%contact%</span><span class="contact-info">%data%</span></li>';
+var HTMLmobile = '<li class="contact"><span class="contact-title">mobile</span><span class="contact-info">%data%</span></li>';
+var HTMLemail = '<li class="contact"><span class="contact-title">email</span><span class="contact-info">%data%</span></li>';
+var HTMLtwitter = '<li class="contact"><span class="contact-title">twitter</span><span class="contact-info">%data%</span></li>';
+var HTMLgithub = '<li class="contact"><span class="contact-title">github</span><span class="contact-info">%data%</span></li>';
+var HTMLblog = '<li class="contact"><span class="contact-title">blog</span><span class="contact-info">%data%</span></li>';
+var HTMLlocation = '<li class="contact"><span class="contact-title">location</span><span class="contact-info">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskills = '<li class="contact"><span class="contact-info">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';

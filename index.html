@@ -54,20 +54,42 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
-  <div id="main">
 
-    <!--
-    Everything from here to the <script> tag below is the skeleton of your
-    website. Your code will add information to each of the sections of the
-    resume below. You can pretty easily figure out what each section will
-    display by looking at the id or at what's written between the <h2> tags.
-    -->
-    <nav class= "navbar navbar-default">
-      <div id="header" class="center-content clear-fix">
-        <ul id="topContacts" class="flex-box"></ul>
-      </div>
-      <div style="clear: both;"></div>
-    </div>
+  <!--
+  Navbar
+  -->
+  <nav class= "navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-content" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <p class= "navbar-text"></p>
+     </div>
+
+    <div class="collapse navbar-collapse" id="navbar-content">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li><a href="#">Separated link</a></li>
+        <li><a href="#">One more separated link</a></li>
+      </ul>
+    </div>  
+  </div>
+  </nav>  
+
+  <div class= "container-fluid" id="topContacts">
+    <ul id="contact-info"></ul>
+  </div>  
+
+  <div id="bio" class="container-fluid">
+  </div>
+
+    <div id= "main">
 
     <div id="workExperience" class="gray">
       <h2>Work Experience</h2>
@@ -119,11 +141,11 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     */
 
 
-    if(document.getElementsByClassName('flex-item').length === 0) {
+    if(document.getElementsByClassName('contact').length === 0) {
       document.getElementById('topContacts').style.display = 'none';
     }
-    if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
+    if(document.getElementsByClassName('navbar-text').length === 0) {
+      document.getElementById('navbar-header').style.display = 'none';
     }
     if(document.getElementsByClassName('work-entry').length === 0) {
       document.getElementById('workExperience').style.display = 'none';
@@ -134,7 +156,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     if(document.getElementsByClassName('education-entry').length === 0) {
       document.getElementById('education').style.display = 'none';
     }
-    if(document.getElementsByClassName('flex-item').length === 0) {
+    if(document.getElementsByClassName('contact').length === 0) {
       document.getElementById('lets-connect').style.display = 'none';
     }
     if(document.getElementById('map') === null) {
