@@ -5,12 +5,12 @@ This is empty on purpose! Your code to build the resume will go here.
 
 var bio = {
   "name": "Julia Stefanczyk",
-  "role": "Project Manager",
+  "role": "Front-End Developer",
   "contacts": {
     "mobile": "(267) 505-1104",
     "email": "julia.stefanczyk@gmail.com",
     "github": "jaspinall",
-    "location": "Oakland, CA"
+    "location": "San Francisco, CA"
     },
     "pictureURL": "images/cat.jpg",
     "welcomeMessage": "A front-end developer with a range of experience in project management, project management, and the K-12 educational market.",
@@ -124,6 +124,7 @@ function displayHeader() {
   $("#bio").append(formattedPicture);
 
   $("#bio").append(HTMLskillsStart);
+
   for (skill in bio.skills) {
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
     $("#skills").append(formattedSkill);
