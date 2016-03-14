@@ -1,7 +1,6 @@
 /*
-This is empty on purpose! Your code to build the resume will go here.
+Create objects to store biographical details, work history, education details, and sample projects.
  */
-
 
 var bio = {
   "name": "Julia Stefanczyk",
@@ -12,9 +11,9 @@ var bio = {
     "github": "jaspinall",
     "location": "San Francisco, CA"
     },
-    "pictureURL": "images/cat.jpg",
-    "welcomeMessage": "A front-end developer with a range of experience in project management, project management, and the K-12 educational market.",
-    "skills": ["product management", "project management", "coding"]
+  "pictureURL": "images/cat.jpg",
+  "welcomeMessage": "A front-end developer with a range of experience in project management, project management, and the K-12 educational market.",
+  "skills": ["product management", "project management", "coding"]
 };
 
 var work = {
@@ -97,25 +96,21 @@ var onlineClasses = {
   ]
 };
 
-function displayNavFooter() {
+/* Populate the navbar with name and title */
+
+function displayNav() {
 
   var formattedTitle= HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
-
   $(".navbar-text").append(formattedTitle);
 
-  var formattedRole=   $(".navbar-text").append(formattedRole);
+  var formattedRole = $(".navbar-text").append(formattedRole);
+}
 
-};
+displayNav();
 
-displayNavFooter();
+/* Populate the bio div with a welcome message, picture, and key skills */
 
-function displayHeader() {
-
-  for (var contact in bio.contacts) {
-    var formattedContact = HTMLcontactGeneric.replace("%contact%", contact).replace("%data%", bio.contacts[contact]);
-    $("#footerContacts").append(formattedContact);
-  };
-
+function displayBio() {
 
   var formattedWelcome= HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
   $("#bio").append(formattedWelcome);
@@ -128,12 +123,28 @@ function displayHeader() {
   for (skill in bio.skills) {
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
     $("#skills").append(formattedSkill);
-  };
-};
+  }
+}
 
-displayHeader();
+displayBio();
 
+/* Add the internationalize button to the bio div */
 
+$("#bio").append(internationalizeButton);
+
+/* Populate the footer with contact information */
+
+function displayFooter() {
+
+  for (var contact in bio.contacts) {
+    var formattedContact = HTMLcontactGeneric.replace("%contact%", contact).replace("%data%", bio.contacts[contact]);
+    $("#footerContacts").append(formattedContact);
+  }
+}
+
+displayFooter();
+
+/* Populate the workExperience div with job history */
 
 function displayWork() {
   for (job in work.jobs) {
@@ -149,27 +160,11 @@ function displayWork() {
 
     $(".work-entry:last").append(formattedJobAll);
   }
-};
+}
 
 displayWork();
 
-$(document).click(function(loc) {
-  var x = loc.pageX;
-  var y = loc.pageY;
-
-  logClicks(x,y);
-});
-
-$("#main").append(internationalizeButton);
-
-$("#mapDiv").append(googleMap);
-
-
-function inName() {
-  bio.name = bio.name.split(" ")
-  bio.name = bio.name[0] + " " + bio.name[1].toUpperCase();
-  return bio.name;
-};
+/* Populate the projects div with sample projects */
 
 projects.display = function() {
   for (project in projects.projects) {
@@ -191,6 +186,8 @@ projects.display = function() {
 
 projects.display();
 
+/* Populate the education div with college information and online courses completed */
+
 education.display = function() {
   for (school in education.schools) {
     $("#education").append(HTMLschoolStart);
@@ -198,15 +195,15 @@ education.display = function() {
     var formattedSchoolName = HTMLschoolName.replace("#", education.schools[school].url).replace("%data%", education.schools[school].name) + HTMLschoolDegree.replace("%data%", education.schools[school].degree);
     $(".education-entry:last").append(formattedSchoolName);
     var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-    $(".education-entry:last").append(formattedSchoolLocation)
+    $(".education-entry:last").append(formattedSchoolLocation);
     var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-    $(".education-entry:last").append(formattedSchoolDates)
+    $(".education-entry:last").append(formattedSchoolDates);
 
     for (major in education.schools[school].majors) {
       var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
       $(".education-entry:last").append(formattedMajor);
     }
-  };
+  }
 
   $("#education").append(HTMLonlineClasses);
 
@@ -223,3 +220,6 @@ education.display = function() {
 
 education.display();
 
+/* Add the Google Map */
+
+$("#mapDiv").append(googleMap);
