@@ -38,6 +38,10 @@ img {
 
 /* Main */
 
+main {
+  padding-top: 80px;
+}
+
 .biopic {
   float: left;
   width: 200px;

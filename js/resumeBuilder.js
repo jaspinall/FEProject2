@@ -39,14 +39,14 @@ var education = {
     {
       "title": "Front-End Web Development Nanodegree",
       "school": "Udacity",
-      "dates": "2016",
-      "URL": "https://www.udacity.com/"
+      "date": "2016",
+      "url": "https://www.udacity.com/"
     },
     {
       "title": "The Complete Web Developer Course",
       "school": "Udemy",
-      "dates": "2015",
-      "URL": "https://www.udemy.com/"
+      "date": "2015",
+      "url": "https://www.udemy.com/"
     }
   ]
 };
@@ -119,13 +119,13 @@ bio.display = function() {
     var formattedContact = HTMLcontactGeneric.replace("%contact%", contact).replace("%data%", bio.contacts[contact]);
     $("#footerContacts").append(formattedContact);
   }
+
+  $("#bio").append(internationalizeButton);
 };
 
 bio.display();
 
-/* Add the internationalize button to the bio div */
 
-$("#bio").append(internationalizeButton);
 
 /* Populate the workExperience div with job history */
 
@@ -194,9 +194,9 @@ education.display = function() {
     $("#education").append(HTMLschoolStart);
     var formattedOnlineName = HTMLonlineTitle.replace("#", education.onlineCourses[onlineClass].URL).replace("%data%", education.onlineCourses[onlineClass].title) + HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineClass].school);
     $(".education-entry:last").append(formattedOnlineName);
-    var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineClass].dates);
+    var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineClass].date);
     $(".education-entry:last").append(formattedOnlineDates);
-    var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineClass].URL);
+    var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineClass].url);
     $(".education-entry:last").append(formattedOnlineURL);
   }
 };
